@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     Vector2 targetPos;
-    [SerializeField]Vector2 PlayerInput;
+    Vector2 PlayerInput;
     Rigidbody2D RB;
     private enum Facing {UP,DOWN,RIGHT,LEFT,NONE}
-   [SerializeField] private Facing FacingDir = Facing.NONE;
+    private Facing FacingDir = Facing.NONE;
 
+
+    [Header("Float & Int Values")]
+    [Tooltip("Float & Int values like speed and dash range")]
     public float Speed;
     public float DashRange;
+    [Space]
+
+    
+    #region Sprites
+    private SpriteRenderer MySpriteRenderer;
+    [Header("Sprites")]
+    [Tooltip("Directional Sprites")]
+    public Sprite[] DirectionalSprites;
+    #endregion
 
 
-   
 
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        MySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         RB.velocity = PlayerInput.normalized * Speed;
         CheckDir();
         Dash();
+        ChangeSpriteDirection();
 
     }
 
@@ -72,6 +84,24 @@ public class PlayerMovement : MonoBehaviour
                 targetPos.x = -1;
             }
             transform.Translate(targetPos * DashRange);
+        }
+    }
+
+    void ChangeSpriteDirection() {
+        if (FacingDir == Facing.UP)
+        {
+            MySpriteRenderer.sprite = DirectionalSprites[0];
+        }
+        else if (FacingDir == Facing.DOWN) {
+            MySpriteRenderer.sprite = DirectionalSprites[1];
+        }
+        else if (FacingDir == Facing.LEFT)
+        {
+            MySpriteRenderer.sprite = DirectionalSprites[2];
+        }
+        else if (FacingDir == Facing.RIGHT)
+        {
+            MySpriteRenderer.sprite = DirectionalSprites[3];
         }
     }
 }
