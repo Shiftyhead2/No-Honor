@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -138,6 +139,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804d30dc9aeff764ebe2468968843330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootPoint: {fileID: 3833689632290039889}
+  StarPrefab: {fileID: 6767880380900183324, guid: 7656ae7bd423d1f40ad5a7e66ce2983d,
+    type: 3}
+  StarSpeed: 10
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -261,23 +278,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 394890431, guid: 87f5c4309cc70ff41af1e7dec42fd062, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 394890431, guid: 87f5c4309cc70ff41af1e7dec42fd062, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 847150900843042744, guid: 87f5c4309cc70ff41af1e7dec42fd062,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5573204708712827817, guid: 87f5c4309cc70ff41af1e7dec42fd062,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f5c4309cc70ff41af1e7dec42fd062, type: 3}
+--- !u!1 &3833689632290039889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3833689632290039889, guid: 87f5c4309cc70ff41af1e7dec42fd062,
+    type: 3}
+  m_PrefabInstance: {fileID: 1444910003357158152}
+  m_PrefabAsset: {fileID: 0}
