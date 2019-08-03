@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a9269229f552845a1903bbfeaaa9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.5
-  DashRange: 0.5
+  Speed: 1
+  DashRange: 1.5
   DirectionalSprites:
   - {fileID: 21300000, guid: 16c0eaf3b3ade0e43b69c9ffdd7affba, type: 3}
   - {fileID: 21300000, guid: 008a76522b7bf3f4aa2968688639360d, type: 3}
@@ -130,6 +130,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

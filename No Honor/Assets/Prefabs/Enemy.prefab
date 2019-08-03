@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -178,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   moveSpeed: 0
-  StoppingDistance: 2
-  RetreatDistance: 1.5
+  StoppingDistance: 1.5
+  RetreatDistance: 1
   StartTimeBtwShots: 1
   ShadowStar: {fileID: 169011481004587351, guid: e3d2787b6e65ca34c976ab50497740eb,
     type: 3}
