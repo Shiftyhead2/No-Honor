@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1444910002964970016}
   - component: {fileID: 1444910002964970031}
   - component: {fileID: 1444910002964970017}
+  - component: {fileID: 4153732431563986604}
+  - component: {fileID: 7807060392825815000}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -44,7 +46,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1444910002964970030}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -67,13 +69,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a9269229f552845a1903bbfeaaa9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
-  DashRange: 1.5
+  Speed: 1.5
+  DashRange: 0.5
   DirectionalSprites:
   - {fileID: 21300000, guid: 16c0eaf3b3ade0e43b69c9ffdd7affba, type: 3}
   - {fileID: 21300000, guid: 008a76522b7bf3f4aa2968688639360d, type: 3}
   - {fileID: 21300000, guid: e08aef81f51074e40b3a21f53c547e13, type: 3}
   - {fileID: 21300000, guid: 1397b087e4f935c4c80e93d15a2ed87b, type: 3}
+--- !u!61 &4153732431563986604
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444910002964970030}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022570997, y: -0.024827957}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35898662, y: 0.6072664}
+  m_EdgeRadius: 0
+--- !u!114 &7807060392825815000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444910002964970030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bbe80fd06fd634eaab3556e69b5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 1
 --- !u!1 &1444910005049298929
 GameObject:
   m_ObjectHideFlags: 0
