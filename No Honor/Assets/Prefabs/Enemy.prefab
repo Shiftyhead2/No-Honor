@@ -226,3 +226,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  BloodParticles: {fileID: 5238404961259574196, guid: 70c361d6d057553489b3ac45bf7c39aa,
+    type: 3}

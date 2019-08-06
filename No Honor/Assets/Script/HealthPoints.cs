@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthPoints : MonoBehaviour
 {
     public float HP;
+    public GameObject BloodParticles;
 
     
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class HealthPoints : MonoBehaviour
 
     void DestroyHumanoidObject()
     {
+        Instantiate(BloodParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
