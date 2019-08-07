@@ -183,7 +183,7 @@ MonoBehaviour:
   moveSpeed: 0
   StoppingDistance: 1.5
   RetreatDistance: 1
-  StartTimeBtwShots: 1
+  StartTimeBtwShots: 2
   ShadowStar: {fileID: 169011481004587351, guid: e3d2787b6e65ca34c976ab50497740eb,
     type: 3}
   ShootPoint: {fileID: 2332270211250069868}

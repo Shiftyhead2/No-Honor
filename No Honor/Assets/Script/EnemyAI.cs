@@ -39,29 +39,24 @@ public class EnemyAI : MonoBehaviour
             else if (Vector2.Distance(transform.position, Player.position) < StoppingDistance && Vector2.Distance(transform.position, Player.position) > RetreatDistance)
             {
                 moveSpeed = 0f;
-                if (TimeBtwShots <= 0f)
-                {
-                    Instantiate(ShadowStar, ShootPoint.position, Quaternion.identity);
-                    TimeBtwShots = StartTimeBtwShots;
-                }
-                else
-                {
-                    TimeBtwShots -= Time.deltaTime;
-                }
+               
             }
             else if (Vector2.Distance(transform.position, Player.position) < RetreatDistance)
             {
                 moveSpeed = -1f;
-                if (TimeBtwShots <= 0f)
-                {
-                    Instantiate(ShadowStar, transform.position, Quaternion.identity);
-                    TimeBtwShots = StartTimeBtwShots;
-                }
-                else
-                {
-                    TimeBtwShots -= Time.deltaTime;
-                }
+               
             }
+
+            if (TimeBtwShots <= 0f)
+            {
+                Instantiate(ShadowStar, transform.position, Quaternion.identity);
+                TimeBtwShots = StartTimeBtwShots;
+            }
+            else
+            {
+                TimeBtwShots -= Time.deltaTime;
+            }
+
         }
         else
         {
