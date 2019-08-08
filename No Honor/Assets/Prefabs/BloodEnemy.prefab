@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3549018949162515974}
   - component: {fileID: 3156439565391456928}
   - component: {fileID: 3226614844915861786}
+  - component: {fileID: 3935181738298473822}
   m_Layer: 0
   m_Name: BloodEnemy
   m_TagString: Untagged
@@ -4753,3 +4754,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3935181738298473822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238404961259574196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50b3d2070e6ad448b004752573f97ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

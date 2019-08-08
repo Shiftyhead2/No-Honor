@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D RB;
     private enum Facing { UP, DOWN, RIGHT, LEFT, NONE }
     private Facing FacingDir = Facing.NONE;
+    public GameObject SmokeParticles;
 
 
     [Header("Float & Int Values")]
@@ -91,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 targetPos.x = -1;
             }
+            Instantiate(SmokeParticles, transform.position, Quaternion.identity);
             transform.Translate(targetPos * DashRange);
         }
     }
