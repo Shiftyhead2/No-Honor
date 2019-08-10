@@ -17,9 +17,13 @@ public class EnemyAI : MonoBehaviour
    
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        if(Player == null)
+        {
+            return;
+        }
         rb = GetComponent<Rigidbody2D>();
         TimeBtwShots = StartTimeBtwShots;
 
@@ -70,11 +74,18 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveCharacter(Movement);
+        if(Player != null)
+        {
+            MoveCharacter(Movement);
+        }
     }
 
     void MoveCharacter(Vector2 Direction)
     {
-        rb.MovePosition((Vector2)transform.position + (Direction * moveSpeed * Time.deltaTime));
+        if(Player != null)
+        {
+            rb.MovePosition((Vector2)transform.position + (Direction * moveSpeed * Time.deltaTime));
+        }
+        
     }
 }

@@ -20,6 +20,11 @@ public class HealthPoints : MonoBehaviour
 
     void DestroyHumanoidObject()
     {
+        if(transform.tag == "Enemy")
+        {
+            SpawnScript.EnemiesAlive--;
+        }
+
         Instantiate(BloodParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
