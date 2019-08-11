@@ -6,11 +6,14 @@ public class HealthPoints : MonoBehaviour
 {
     public float HP;
     public GameObject BloodParticles;
+    public CameraShake CameraShaker;
+    public float Duration = 1f;
 
     
     // Update is called once per frame
     void Update()
     {
+        CameraShaker = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         if(HP <= 0f)
         {
             DestroyHumanoidObject();
@@ -26,6 +29,7 @@ public class HealthPoints : MonoBehaviour
         }
 
         Instantiate(BloodParticles, transform.position, Quaternion.identity);
+        CameraShaker.Shake(Duration);
         Destroy(gameObject);
     }
 

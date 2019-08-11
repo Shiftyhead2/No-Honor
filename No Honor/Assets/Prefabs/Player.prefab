@@ -120,6 +120,8 @@ MonoBehaviour:
   HP: 1
   BloodParticles: {fileID: 4536444616036436983, guid: 61b6fd7bcd3d2e24abe23fa687f17435,
     type: 3}
+  CameraShaker: {fileID: 0}
+  Duration: 0.1
 --- !u!114 &9144365623344320930
 MonoBehaviour:
   m_ObjectHideFlags: 0

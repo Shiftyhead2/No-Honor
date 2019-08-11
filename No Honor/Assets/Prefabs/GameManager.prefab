@@ -55,3 +55,24 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   TimeBetweenWaves: 2
+  WaveText: {fileID: 0}
+  EnemiesRemainingText: {fileID: 0}
+  Taunts:
+  - You won't survive the next one!
+  - They are coming!
+  - You will die!
+  - You will fall!
+  - Prepare to die!
+  - Death is the only way out!
+  - You will suffer!
+  - It only gets harder from here!
+  - You can't win!
+  - You won't win this wave!
+  - They are coming to get you Barbara!
+  - Think you are better than me?
+  - Kindly die next wave!
+  - You are getting on my nerves!
+  - I will make sure the next one is even harder!
+  - Why are you celebrating? It ain't over yet.
+  - Abandon all hope!
+  - Your resistance is pathetic!
