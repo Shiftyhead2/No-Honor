@@ -13,16 +13,17 @@ public class PointAndShoot : MonoBehaviour
     private float cooldown = 0.5f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Player = GameObject.Find("Player");
+        ShootPoint = GameObject.Find("ShootPoint");
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player != null)
+        if (GameOverManager.GameOver == false)
         {
             cooldown -= Time.deltaTime;
             target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));

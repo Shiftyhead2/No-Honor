@@ -11,8 +11,9 @@ public class SpawnScript : MonoBehaviour
 
     public float TimeBetweenWaves = 5f;
     private float Countdown = 2f;
-    private int WaveIndex = 0;
+    public static int WaveIndex = 0;
 
+    public Canvas UI;
     public Text WaveText;
     public Text EnemiesRemainingText;
     [TextArea]
@@ -20,11 +21,22 @@ public class SpawnScript : MonoBehaviour
     private bool HasChosen = false;
 
 
-    
+    private void Start()
+    {
+        WaveIndex = 0;
+        EnemiesAlive = 0;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (GameOverManager.GameOver)
+        {
+            UI.enabled = false;
+            return;
+        }
+
         EnemiesRemainingText.text = "ENEMIES ALIVE:" + EnemiesAlive.ToString();
         if (EnemiesAlive > 0)
         {

@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player != null)
+        if (GameOverManager.GameOver == false)
         {
             Vector3 direction = Player.position - transform.position;
             Movement = direction.normalized;
@@ -74,7 +74,7 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Player != null)
+        if(GameOverManager.GameOver == false)
         {
             MoveCharacter(Movement);
         }
@@ -82,7 +82,7 @@ public class EnemyAI : MonoBehaviour
 
     void MoveCharacter(Vector2 Direction)
     {
-        if(Player != null)
+        if(GameOverManager.GameOver == false)
         {
             rb.MovePosition((Vector2)transform.position + (Direction * moveSpeed * Time.deltaTime));
         }

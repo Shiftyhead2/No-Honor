@@ -22,6 +22,11 @@ public class Projective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameOverManager.GameOver)
+        {
+            return;
+        }
+
         transform.position = Vector2.MoveTowards(transform.position, target, Speed * Time.deltaTime);
 
         if(transform.position.x == target.x && transform.position.y == target.y)
