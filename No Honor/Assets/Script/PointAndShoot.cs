@@ -8,6 +8,8 @@ public class PointAndShoot : MonoBehaviour
     public GameObject ShootPoint;
     public GameObject StarPrefab;
     private GameObject Player;
+    private AudioSource MyAudio;
+    public AudioClip ShootSound;
 
     public float StarSpeed = 60.0f;
     private float cooldown = 0.5f;
@@ -17,6 +19,7 @@ public class PointAndShoot : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         ShootPoint = GameObject.Find("ShootPoint");
+        MyAudio = GetComponent<AudioSource>();
         
     }
 
@@ -47,6 +50,8 @@ public class PointAndShoot : MonoBehaviour
 
     void FireStar(Vector2 direction,float rotationZ)
     {
+        MyAudio.clip = ShootSound;
+        MyAudio.Play();
         GameObject s = Instantiate(StarPrefab) as GameObject;
         s.transform.position = ShootPoint.transform.position;
         s.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);

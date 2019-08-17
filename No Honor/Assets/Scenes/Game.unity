@@ -573,11 +573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 183741734142062753, guid: b1c12714333cee14cb06b1de65c0d9a9,
-        type: 3}
-      propertyPath: ShootPoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c12714333cee14cb06b1de65c0d9a9, type: 3}
 --- !u!114 &183741733824497888 stripped
@@ -683,6 +678,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1810168284234240616, guid: f6a48b565124b08489023306ddabed8e,
+        type: 3}
+      propertyPath: DeathUI
+      value: 
+      objectReference: {fileID: 696464877}
+    - target: {fileID: 1810168284234240616, guid: f6a48b565124b08489023306ddabed8e,
+        type: 3}
+      propertyPath: GameOverText
+      value: 
+      objectReference: {fileID: 414963230}
     - target: {fileID: 9183771421185458301, guid: f6a48b565124b08489023306ddabed8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -793,16 +798,6 @@ PrefabInstance:
       propertyPath: EnemiesRemainingText
       value: 
       objectReference: {fileID: 6071372774763547449}
-    - target: {fileID: 1810168284234240616, guid: f6a48b565124b08489023306ddabed8e,
-        type: 3}
-      propertyPath: DeathUI
-      value: 
-      objectReference: {fileID: 696464877}
-    - target: {fileID: 1810168284234240616, guid: f6a48b565124b08489023306ddabed8e,
-        type: 3}
-      propertyPath: GameOverText
-      value: 
-      objectReference: {fileID: 414963230}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a48b565124b08489023306ddabed8e, type: 3}
 --- !u!1001 &6071372774763547448

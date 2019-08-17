@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private enum Facing { UP, DOWN, RIGHT, LEFT, NONE }
     private Facing FacingDir = Facing.NONE;
     public GameObject SmokeParticles;
+    private AudioSource MyAudio;
+    public AudioClip DashSFX;
 
 
     [Header("Float & Int Values")]
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         MySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        MyAudio = GetComponent<AudioSource>();
        
     }
 
@@ -92,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 targetPos.x = -1;
             }
+            MyAudio.clip = DashSFX;
+            MyAudio.Play();
             Instantiate(SmokeParticles, transform.position, Quaternion.identity);
             transform.Translate(targetPos * DashRange);
         }

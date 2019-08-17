@@ -7,6 +7,7 @@ public class HealthPoints : MonoBehaviour
     public float HP;
     public GameObject BloodParticles;
     public CameraShake CameraShaker;
+    public AudioClip DeathSound;
     public float Duration = 1f;
 
     
@@ -33,6 +34,8 @@ public class HealthPoints : MonoBehaviour
             SpawnScript.EnemiesAlive--;
         }
 
+
+        AudioSource.PlayClipAtPoint(DeathSound, transform.position);
         Instantiate(BloodParticles, transform.position, Quaternion.identity);
         CameraShaker.Shake(Duration);
         Destroy(gameObject);

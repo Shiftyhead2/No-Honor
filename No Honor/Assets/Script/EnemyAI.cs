@@ -14,7 +14,8 @@ public class EnemyAI : MonoBehaviour
     public float StartTimeBtwShots;
     public GameObject ShadowStar;
     public Transform ShootPoint;
-   
+    private AudioSource MyAudio;
+    public AudioClip Shoot;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +26,7 @@ public class EnemyAI : MonoBehaviour
             return;
         }
         rb = GetComponent<Rigidbody2D>();
+        MyAudio = GetComponent<AudioSource>();
         TimeBtwShots = StartTimeBtwShots;
 
     }
@@ -53,6 +55,8 @@ public class EnemyAI : MonoBehaviour
 
             if (TimeBtwShots <= 0f)
             {
+                MyAudio.clip = Shoot;
+                MyAudio.Play();
                 Instantiate(ShadowStar, transform.position, Quaternion.identity);
                 TimeBtwShots = StartTimeBtwShots;
             }
