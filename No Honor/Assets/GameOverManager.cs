@@ -32,7 +32,19 @@ public class GameOverManager : MonoBehaviour
     void Dead()
     {
         DeathAnimator.SetBool("GameOver", true);
-        GameOverText.text = "You survived " + SpawnScript.WaveIndex.ToString() + " waves";
+        if(SpawnScript.WaveIndex <= 1)
+        {
+            GameOverText.text = "You seriously died on the first wave?";
+        }
+        else if(SpawnScript.WaveIndex <= 2)
+        {
+            GameOverText.text = "Did you seriously die on wave 2?";
+        }
+        else
+        {
+            GameOverText.text = "You survived " + SpawnScript.WaveIndex.ToString() + " waves";
+        }
+       
 
     }
 
