@@ -92,3 +92,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathUI: {fileID: 0}
   GameOverText: {fileID: 0}
+  RestartButton: {fileID: 0}
+  ExitButton: {fileID: 0}

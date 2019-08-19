@@ -9,14 +9,20 @@ public class GameOverManager : MonoBehaviour
     public static bool GameOver;
     public Canvas DeathUI;
     public Text GameOverText;
+    public Button RestartButton;
+    public Button ExitButton;
+
     private Animator DeathAnimator;
-
-
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        GameOver = false;
         DeathAnimator = DeathUI.GetComponent<Animator>();
+        RestartButton.enabled = false;
+        ExitButton.enabled = false;
+        GameOver = false;
+        
+
+        
     }
 
     // Update is called once per frame
@@ -31,6 +37,7 @@ public class GameOverManager : MonoBehaviour
 
     void Dead()
     {
+        EnableButtons();
         DeathAnimator.SetBool("GameOver", true);
         if(SpawnScript.WaveIndex <= 1)
         {
@@ -50,12 +57,18 @@ public class GameOverManager : MonoBehaviour
 
     public void RestartGame()
     {
-        GameOver = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void EnableButtons()
+    {
+        RestartButton.enabled = true;
+        ExitButton.enabled = true;
     }
 }
