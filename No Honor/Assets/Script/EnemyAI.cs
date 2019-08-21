@@ -38,16 +38,16 @@ public class EnemyAI : MonoBehaviour
         {
             Vector3 direction = Player.position - transform.position;
             Movement = direction.normalized;
-            if (Vector2.Distance(transform.position, Player.position) > StoppingDistance)
+            if ((transform.position - Player.position).sqrMagnitude > StoppingDistance * StoppingDistance)
             {
                 moveSpeed = 1f;
             }
-            else if (Vector2.Distance(transform.position, Player.position) < StoppingDistance && Vector2.Distance(transform.position, Player.position) > RetreatDistance)
+            else if ((transform.position - Player.position).sqrMagnitude < StoppingDistance * StoppingDistance && (transform.position - Player.position).sqrMagnitude > RetreatDistance * RetreatDistance)
             {
                 moveSpeed = 0f;
                
             }
-            else if (Vector2.Distance(transform.position, Player.position) < RetreatDistance)
+            else if ((transform.position - Player.position).sqrMagnitude < RetreatDistance * RetreatDistance)
             {
                 moveSpeed = -1f;
                

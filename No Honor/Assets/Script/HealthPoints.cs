@@ -24,12 +24,12 @@ public class HealthPoints : MonoBehaviour
 
     void DestroyHumanoidObject()
     {
-        if(transform.tag == "Player")
+        if(transform.CompareTag("Player"))
         {
             GameOverManager.GameOver = true;
         }
 
-        if(transform.tag == "Enemy")
+        if(transform.CompareTag("Enemy"))
         {
             SpawnScript.EnemiesAlive--;
         }

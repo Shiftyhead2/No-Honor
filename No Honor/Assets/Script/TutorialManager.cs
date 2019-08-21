@@ -26,26 +26,25 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            if(SpawnScript.WaveIndex == 0)
+            switch (SpawnScript.WaveIndex)
             {
-                TutorialText.text = "Tutorial will start in the next wave";
-            }
-        
-              else if (SpawnScript.WaveIndex == 1)
-               {
-                    
-                    TutorialText.text = "Use WASD keys to move. Point the mouse and click the left mouse button to shoot a star";
-               }
-               else if (SpawnScript.WaveIndex == 2)
-               {
-                    TutorialText.text = "Press the spacebar to dash in the direction you are currently facing.";
-               }
-               else if (SpawnScript.WaveIndex > 2)
-               {
+                case 3:
                     CompletedTutorial = true;
-                    Debug.Log("Saving data");
+                    //Debug.Log("Saving data");
                     SavePlayer();
-               }
+                    break;
+                case 2:
+                    TutorialText.text = "Press the spacebar to dash in the direction you are currently facing.";
+                    break;
+                case 1:
+                    TutorialText.text = "Use WASD keys to move. Point the mouse and click the left mouse button to shoot a star";
+                    break;
+                case 0:
+                    TutorialText.text = "Tutorial will start in the next wave";
+                    break;
+            }
+
+            
       
         }
 
