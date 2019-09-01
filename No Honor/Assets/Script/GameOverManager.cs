@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class GameOverManager : MonoBehaviour
 {
     public static bool GameOver;
+    public static int Deaths;
+    private bool Send;
     public Canvas DeathUI;
     public Text GameOverText;
     public Button RestartButton;
     public Button ExitButton;
+    
+
 
     private Animator DeathAnimator;
     // Start is called before the first frame update
@@ -18,6 +23,7 @@ public class GameOverManager : MonoBehaviour
     {
         DeathAnimator = DeathUI.GetComponent<Animator>();
         RestartButton.enabled = false;
+        Send = false;
         ExitButton.enabled = false;
         GameOver = false;
         
@@ -25,18 +31,29 @@ public class GameOverManager : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void Update()
     {
         if (GameOver)
         {
-            Dead();
+
+            if (!Send)
+            {
+                Dead();
+            }
+           
+            
+            
         }
         
     }
 
-    void Dead()
+   public void Dead()
     {
+        
+        Deaths++;
+        
         EnableButtons();
         DeathAnimator.SetBool("GameOver", true);
         if(SpawnScript.WaveIndex <= 1)
@@ -51,12 +68,13 @@ public class GameOverManager : MonoBehaviour
         {
             GameOverText.text = "You survived " + SpawnScript.WaveIndex.ToString() + " waves";
         }
-       
+        Send = true;
 
     }
 
     public void RestartGame()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }

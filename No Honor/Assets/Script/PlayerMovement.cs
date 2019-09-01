@@ -12,12 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public GameObject SmokeParticles;
     private AudioSource MyAudio;
     public AudioClip DashSFX;
+    
 
 
     [Header("Float & Int Values")]
     [Tooltip("Float & Int values like speed and dash range")]
     public float Speed;
     public float DashRange;
+    [SerializeField]
+    private float DashCoolDown = 1f;
     [Space]
 
 
@@ -52,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        DashCoolDown -= Time.deltaTime;
+    }
+
     void CheckDir()
     {
         if (PlayerInput.x == 0 && PlayerInput.y == 1)
@@ -75,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && DashCoolDown <= 0f)
         {
             Vector2 currentPos = transform.position;
             Vector2 targetPos = Vector2.zero;
@@ -99,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             MyAudio.Play();
             Instantiate(SmokeParticles, transform.position, Quaternion.identity);
             transform.Translate(targetPos * DashRange);
+            DashCoolDown = 1f;
         }
     }
 

@@ -7,7 +7,8 @@ public class SpawnScript : MonoBehaviour
 {
     public static int EnemiesAlive = 0;
     public Transform enemyPrefab;
-    public Transform[] SpawnPoints;
+    public Transform SpawnPoint;
+    public float SpawnRadius;
 
     public float TimeBetweenWaves = 5f;
     private float Countdown = 2f;
@@ -79,8 +80,9 @@ public class SpawnScript : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Transform _sp = SpawnPoints[Random.Range(0, SpawnPoints.Length)];
-        Instantiate(enemyPrefab, _sp.position, _sp.rotation);
+        Vector2 _sp = SpawnPoint.position;
+        _sp += Random.insideUnitCircle.normalized * SpawnRadius;
+        Instantiate(enemyPrefab, _sp,Quaternion.identity);
         EnemiesAlive++;
     }
 

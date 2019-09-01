@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6418838848148528250}
   - component: {fileID: 6418838848148528251}
   - component: {fileID: 6418838848148528252}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 6418838848410592936}
   - component: {fileID: 6418838848410592937}
   - component: {fileID: 732421753028475760}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GameOverText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 6418838848415428469}
   - component: {fileID: 6418838848415428467}
   - component: {fileID: 6418838848415428468}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,8 @@ GameObject:
   - component: {fileID: 6418838848658556251}
   - component: {fileID: 6418838848658556252}
   - component: {fileID: 6418838848658556253}
-  m_Layer: 5
+  - component: {fileID: 927187896661118069}
+  m_Layer: 0
   m_Name: DeathUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,6 +427,65 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &927187896661118069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6418838848658556254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 1
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: Restart
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 1
+          m_ValueType: System.Int32
+          m_Value: 0
+          m_Target:
+            m_Target: {fileID: 0}
+            m_Path: 
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            m_Type: System.Int32
+            m_EnumType: 
+    m_Name: Restarts
 --- !u!1 &6418838848771738633
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +497,7 @@ GameObject:
   - component: {fileID: 6418838848771738632}
   - component: {fileID: 6418838848771738742}
   - component: {fileID: 6418838848771738743}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +577,7 @@ GameObject:
   - component: {fileID: 6418838849194996089}
   - component: {fileID: 6418838849194996090}
   - component: {fileID: 6418838849194996091}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,6 +696,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 927187896661118069}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &6418838849221254800
@@ -649,7 +720,7 @@ GameObject:
   - component: {fileID: 6418838849221254815}
   - component: {fileID: 6418838849221254813}
   - component: {fileID: 6418838849221254814}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +800,7 @@ GameObject:
   - component: {fileID: 6418838849649209964}
   - component: {fileID: 6418838849649209965}
   - component: {fileID: 5067789549662232202}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GameOverText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

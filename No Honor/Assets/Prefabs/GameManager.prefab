@@ -47,15 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 378092196786364290, guid: 682a8d019921e994e957f34737e0fc84,
     type: 3}
-  SpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  SpawnPoint: {fileID: 0}
+  SpawnRadius: 4
   TimeBetweenWaves: 2
   UI: {fileID: 0}
   WaveText: {fileID: 0}
@@ -79,6 +72,13 @@ MonoBehaviour:
   - Why are you celebrating? It ain't over yet.
   - Abandon all hope!
   - Your resistance is pathetic!
+  - You have sinned!
+  - There is no escape for your soul!
+  - You will suffer in hell!
+  - Pray for your own soul!
+  - 'You won''t escape this torture! '
+  - Remember. You're here forever!
+  - Suffer for what you did to them!
 --- !u!114 &1810168284234240616
 MonoBehaviour:
   m_ObjectHideFlags: 0
